@@ -614,29 +614,20 @@ button:focus {
   color: #fff !important;
 }
 
-.social-icon .facebook:hover {
-  background: #3b5999;
-}
 
 .social-icon .twitter:hover {
   background: #4A9CEC;
 }
 
-.social-icon .instagram:hover {
+.social-icon .github:hover {
   background: #860AA5;
 }
 
-.social-icon .airbnb:hover {
-  background: #F45757;
-}
 
 .social-icon .linkedin:hover {
   background: #1260A2;
 }
 
-.social-icon .google:hover {
-  background: #CE332A;
-}
 
 /* ScrollToTop */
 a.back-to-top {
