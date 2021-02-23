@@ -172,8 +172,19 @@
     .gm-parallax {
 
   /* The image used */
-  background-image: url("../img/gm-img/gm_mobile.png");  /* Set a specific height */
+  background-image: url("../img/gm-img/gm_mobile.png"); 
+  min-height: 550px; /* Set a specific height */
 }
+
+.project-tag{
+  margin-left: 0;}
+
+  .project-tag2{
+  padding: 0;
+  margin-left: 0;}
+
+
+
 
     .video-features {
       width:38%;
@@ -212,6 +223,11 @@
     .section-padding {
       padding: 60px 30px;
     }
+
+      #work{
+    padding-bottom: 0;
+    
+  }
 
     .section-title {
       font-size: 32px;
@@ -320,6 +336,7 @@
     .footer-area .footer-titel {
       margin-top: 30px;
     }
+
 
     .contact-right-area {
       margin: 20px 0;
