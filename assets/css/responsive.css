@@ -169,6 +169,12 @@
   /* mobile or only mobile */
   @media (max-width:767px) {
 
+    .gm-parallax {
+
+  /* The image used */
+  background-image: url("../img/gm-img/gm_mobile.png");  /* Set a specific height */
+}
+
     .video-features {
       width:38%;
     }
