@@ -1,8 +1,3 @@
-
-/*@media (min-width: 2000px) {
-  .parallax {min-height: 600px; }
-  
-}*/
 /* only small desktops */
 @media (min-width:992px) {
   #mobile-demo {
@@ -162,42 +157,63 @@
       margin-left: 0px;
     }
 
-
-
   }
 
   /* mobile or only mobile */
   @media (max-width:767px) {
-
     .gm-parallax {
 
-  /* The image used */
-  background-image: url("../img/gm-img/gm_mobile.png"); 
-  min-height: 550px; /* Set a specific height */
-}
+      /* The image used */
+      background-image: url("../img/gm-img/gm_mobile.png");
+      min-height: 550px; /* Set a specific height */
+    }
 
-.project-tag{
-  margin-left: 0;}
+    .levels-parallax {
 
-  .project-tag2{
-  padding: 0;
-  margin-left: 0;}
+      /* The image used */
+      background-image: url("../img/levels-img/levels_mobile.png");
+      min-height: 550px; /* Set a specific height */
+    }
 
+    .ava-parallax {
 
+      /* The image used */
+      background-image: url("../img/ava-img/ava_mobile.png");
+      min-height: 550px; /* Set a specific height */
+    }
 
+    .cinetrip-parallax {
+
+      /* The image used */
+      background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
+      min-height: 550px; /* Set a specific height */
+    }
+
+    .project-tag {
+      margin-left: 0;
+    }
+
+    .project-tag2 {
+      padding: 0;
+      margin-left: 0;
+    }
 
     .video-features {
-      width:38%;
+      width: 38%;
     }
+
     #sidenav {
-    display: none !important;
-  }
+      display: none !important;
+    }
+
     .mobile-hide {
-    display: none !important;
-  }
-    .w-50{
-    width:20% !important;
-  }
+      display: none !important;
+    }
+
+    .w-50 {
+      width: 20% !important;
+    }
+
     #hero-area .contents .head-title h2 {
       font-size: 34px;
     }
@@ -215,19 +231,18 @@
     }
 
     .img-fluid {
+
       /*max-height: 100%;*/
       max-width: 100%;
-
     }
 
     .section-padding {
       padding: 60px 30px;
     }
 
-      #work{
-    padding-bottom: 0;
-    
-  }
+    #work {
+      padding-bottom: 0;
+    }
 
     .section-title {
       font-size: 32px;
@@ -336,7 +351,6 @@
     .footer-area .footer-titel {
       margin-top: 30px;
     }
-
 
     .contact-right-area {
       margin: 20px 0;
