@@ -2,7 +2,10 @@
 
 @media (min-width:1282px) {
 .parallax_bg{
-  min-height: 850px; }}
+  min-height: 850px; }
+  .work-container {
+  width: 80%;
+}
 
 
   /* only small desktops */
