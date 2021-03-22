@@ -844,13 +844,6 @@ overflow: hidden;
 }
 
 /*work page style*/
-#work .work-container {
-  width: 100%;
-  padding-right: 150px;
-  padding-left: 150px;
-  margin-right: auto;
-  margin-left: auto;
-}
 
 .work-container {
   width: 100%;
