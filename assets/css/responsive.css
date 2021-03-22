@@ -1,4 +1,11 @@
-/* only small desktops */
+/*large screens*/
+
+@media (min-width:1282px) {
+.parallax_bg{
+  min-height: 850px; }}
+
+
+  /* only small desktops */
 @media (min-width:992px) {
   #mobile-demo {
     display: none !important;
