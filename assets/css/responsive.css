@@ -171,32 +171,33 @@
 
   /* mobile or only mobile */
   @media (max-width:767px) {
+
+    .parallax_bg{
+      min-height: 550px;
+
+    }
     .gm-parallax {
 
       /* The image used */
       background-image: url("../img/gm-img/gm_mobile.png");
-      min-height: 550px; /* Set a specific height */
     }
 
     .levels-parallax {
 
       /* The image used */
       background-image: url("../img/levels-img/levels_mobile.png");
-      min-height: 550px; /* Set a specific height */
     }
 
     .ava-parallax {
 
       /* The image used */
       background-image: url("../img/ava-img/ava_mobile.png");
-      min-height: 550px; /* Set a specific height */
     }
 
     .cinetrip-parallax {
 
       /* The image used */
       background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
-      min-height: 550px; /* Set a specific height */
     }
 
     .project-tag {
