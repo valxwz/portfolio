@@ -1,15 +1,16 @@
 /*large screens*/
 
-@media (min-width:1282px) {
+@media screen and (min-width:1282px) {
 .parallax_bg{
   min-height: 850px; }
   .work-container {
   width: 85%;
 }
+}
 
 
   /* only small desktops */
-@media (min-width:992px) {
+@media screen and (min-width:992px) {
   #mobile-demo {
     display: none !important;
   }
@@ -38,7 +39,37 @@
 }
 
 /* tablets */
-@media (max-width:991px) {
+@media screen and (max-width:991px) {
+
+  .parallax_bg{
+      min-height: 650px; /* Set a specific height */
+    }
+
+
+    .gm-parallax {
+      /* The image used */
+      background-image: url("../img/gm-img/gm_mobile.png");
+    }
+
+    .levels-parallax {
+
+      /* The image used */
+      background-image: url("../img/levels-img/levels_mobile.png");
+    }
+
+    .ava-parallax {
+      /* The image used */
+      background-image: url("../img/ava-img/ava_mobile.png");
+    }
+
+    .cinetrip-parallax {
+
+      /* The image used */
+      background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
+    }
+
+
+
   .feature-img-fluid {
     display: block;
     margin-left: auto;
@@ -73,7 +104,7 @@
   }
 
   /* only small tablets */
-  @media (min-width:768px) and (max-width:991px) {
+  @media screen and (min-width:768px) and (max-width:991px) {
     #hero-area .contents .head-title h2 {
       font-size: 38px;
     }
@@ -170,35 +201,7 @@
   }
 
   /* mobile or only mobile */
-  @media (max-width:767px) {
-
-    .parallax_bg{
-      min-height: 550px;
-
-    }
-    .gm-parallax {
-
-      /* The image used */
-      background-image: url("../img/gm-img/gm_mobile.png");
-    }
-
-    .levels-parallax {
-
-      /* The image used */
-      background-image: url("../img/levels-img/levels_mobile.png");
-    }
-
-    .ava-parallax {
-
-      /* The image used */
-      background-image: url("../img/ava-img/ava_mobile.png");
-    }
-
-    .cinetrip-parallax {
-
-      /* The image used */
-      background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
-    }
+  @media screen and (max-width:767px) {
 
     .project-tag {
       margin-left: 0;
