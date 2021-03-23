@@ -44,6 +44,7 @@
   .parallax_bg{
       min-height: 650px; /* Set a specific height */
       background-size: auto;
+      background-attachment: absolute;
     }
 
 
