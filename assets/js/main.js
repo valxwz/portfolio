@@ -200,6 +200,20 @@ $.fn.isOnScreenHighlight = function(){
 const dialog_button = document.getElementById("contact-dialog");
 var modal = document.getElementById("myModal");
 
+// Password to access the link
+  const correctPassword = "valzhang";
+
+  function checkPassword() {
+    const passwordInput = document.getElementById("passwordInput").value;
+
+    if (passwordInput === correctPassword) {
+      // Password is correct, open the link
+       window.open("https://www.figma.com/file/Erya6GIh5VI7MBIa2m9FzH/Val-2023?type=design&node-id=414%3A99&mode=design&t=C0UtxqtTy6A8AHKw-1", "_blank"); 
+    } else {
+      alert("Incorrect password. Please contact Val.");
+    }
+  }
+
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("cd-popup-close")[0];
 
