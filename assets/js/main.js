@@ -208,7 +208,7 @@ var modal = document.getElementById("myModal");
 
     if (passwordInput === correctPassword) {
       // Password is correct, open the link
-       window.open("https://www.figma.com/file/Erya6GIh5VI7MBIa2m9FzH/Val-2023?type=design&node-id=414%3A99&mode=design&t=C0UtxqtTy6A8AHKw-1", "_blank"); 
+       window.open("https://www.figma.com/file/Erya6GIh5VI7MBIa2m9FzH/Val-2023?type=design&node-id=567%3A90&mode=design&t=HzLauVBmk14pbpcz-1", "_blank"); 
     } else {
       alert("Incorrect password. Please contact Val.");
     }
