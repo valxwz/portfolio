@@ -198,6 +198,7 @@ $.fn.isOnScreenHighlight = function(){
 // contact-dialog pop-up
 
 const dialog_button = document.getElementById("contact-dialog");
+const image_click_trigger = document.getElementById("image-click-trigger");
 var modal = document.getElementById("myModal");
 
 // Password to access the link
@@ -225,6 +226,11 @@ dialog_button.onclick = function() {
   $('.cd-popup').addClass('is-visible');
 }
 
+// Event listener for the image click
+ if (image_click_trigger) {image_click_trigger.onclick = function() {
+  console.log("Image clicked");
+  $('.cd-popup').addClass('is-visible');
+}}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
