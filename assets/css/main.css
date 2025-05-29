@@ -1966,15 +1966,38 @@ xpopup
   cursor: pointer;
 }
 
+
+/* container for input+toggle + submit button */
+.password-actions {
+  display: flex;
+  flex-wrap: wrap;       /* allow stacking on narrow viewports */
+  align-items: center;  
+  justify-content: center; /* vertically align if side-by-side */
+  gap: 1rem;             /* 1rem (≈16px) space between items */
+}
+
+/* ensure the input grows to fill space, but button stays auto */
+.password-actions .password-field {
+  flex: 1 1 auto;
+}
+
+/* submit button keeps its size */
+.password-actions #password-submit {
+  flex: 0 0 auto;
+}
+
+
 /*password view on& off*/
 .password-field {
   position: relative;
   display: inline-block;
+  width: 100%;  
 }
 
 .password-field input {
   /* make room for the icon on the right */
   padding-right: 2.5rem;
+  width: 100%;  
 }
 
 .toggle-password {
