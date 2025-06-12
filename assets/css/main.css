@@ -230,7 +230,14 @@ a:not([href]):not([tabindex]) {
   background-image: linear-gradient(to right, transparent 50%, #DBFBE3 50%);
 }
 
+.section-nav {
+  transition: opacity 0.3s ease-in-out;
+}
 
+.section-nav.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 
 /*work background img*/
 
@@ -247,6 +254,28 @@ a:not([href]):not([tabindex]) {
 
   /* The image used */
   background-image: url("../img/cinetrip-img/cinetrip-large-cover.png");  /* Set a specific height */
+}
+
+.dtcpayOverview-parallax {
+  /* The image used */
+  background-image: url("../img/dtcpay-img/dtcpay_overview_landing.png");  /* Set a specific height */
+}
+
+.nvOverview-parallax {
+  /* The image used */
+ 
+  background-image: url("../img/nv-img/nv_overview_landing.png");
+
+   /* Set a specific height */
+}
+
+.dtcpay-case1-parallax{
+  /* The image used */
+  background-image: url("../img/dtcpay-img/dtcpay_case1_landing.png"); 
+}
+
+.dtcpay-case2-parallax{
+  background-image: url("../img/dtcpay-img/dtcpay_case2_landing.png"); 
 }
 
 .ava-parallax {
@@ -401,6 +430,14 @@ color:#3d5af1;
   background-color: #3d5af1;
 }
 
+.shape-nv {
+  height: 3px;
+  margin: 0 auto 30px;
+  position: relative;
+  width: 60px;
+  background-color: #AB0808;
+}
+
 .shape-a {
   height: 3px;
   margin: 0 auto 30px;
@@ -454,6 +491,10 @@ color:#3d5af1;
 
 .shape2-g {
   border-left: 6px solid #29419E;
+  padding-left: 28px;
+}
+.shape2-nv {
+  border-left: 6px solid #AB0808;
   padding-left: 28px;
 }
 
@@ -586,6 +627,27 @@ color:#3d5af1;
 .btn-rm:hover {
   color: #3d5af1;
 }
+
+
+
+/* Make the button a flex container so icon + text align nicely */
+.btn-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;      /* space between icon and text */
+  background: #03011C;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Size/tweak the icon */
+.btn-with-icon .btn-icon {
+  width: 1.2rem;    /* or whatever fits your design */
+  height: 1.2rem;
+  object-fit: contain;
+}
+
+
 
 button:focus {
   outline: none !important;
@@ -1896,6 +1958,7 @@ xpopup
 -------------------------------- */
 .cd-popup {
   position: fixed;
+  z-index: 9999;        /* ensure the dark backdrop covers all */
   left: 0;
   top: 0;
   height: 100%;
@@ -1920,6 +1983,7 @@ xpopup
 
 .cd-popup-container {
   position: relative;
+  z-index: 10000;     /* ensure the white modal box sits above the backdrop */
   padding: 2em;
   width: 90%;
   max-width: 400px;
@@ -1962,9 +2026,27 @@ xpopup
   transform: translateY(0);
 }
 
+
 .clickable-image {
   cursor: pointer;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  transform-origin: center;
 }
+
+.clickable-image:hover {
+  transform: scale(1.015);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.clickable-image:active {
+  /* Optional: give a quick “pressed” feel on click */
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#protected-content { opacity: 1; transition: opacity 0.2s; }
 
 
 /* container for input+toggle + submit button */
@@ -1978,7 +2060,8 @@ xpopup
 
 /* ensure the input grows to fill space, but button stays auto */
 .password-actions .password-field {
-  flex: 1 1 auto;
+  flex: 0 0 auto;   /* don’t grow or shrink beyond its contents */
+  width: auto; /* ensure it only wraps its children */
 }
 
 /* submit button keeps its size */
@@ -1991,13 +2074,19 @@ xpopup
 .password-field {
   position: relative;
   display: inline-block;
-  width: 100%;  
+
+  
 }
 
 .password-field input {
   /* make room for the icon on the right */
-  padding-right: 2.5rem;
-  width: 100%;  
+  padding-right: 1.5rem;
+
+}
+
+.password-field input,
+.password-field button {
+  margin: 0;
 }
 
 .toggle-password {
@@ -2019,6 +2108,38 @@ xpopup
 }
 
 /*end - password view on& off*/
+
+
+
+/* ——————————————————————————————————————————————————————————— */
+/* 1) Make the modal backdrop cover the entire viewport, above all */
+/* ——————————————————————————————————————————————————————————— */
+#password-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* above navbars, sidebars, etc. */
+}
+
+/* Ensure the inner container sits above the backdrop */
+#password-modal .cd-popup-container {
+  position: relative;
+  z-index: 10000;
+}
+
+/* ——————————————————————————————————————————————————————————— */
+/* 2) Hide the protected content when the modal is visible */
+/* ——————————————————————————————————————————————————————————— */
+#password-modal.is-visible ~ #protected-content {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.2s ease-out;
+}
 
 
 

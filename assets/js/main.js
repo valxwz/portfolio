@@ -1,3 +1,7 @@
+ 
+
+
+
 (function($) {
   
   "use strict";  
@@ -186,85 +190,61 @@ $.fn.isOnScreenHighlight = function(){
 
 };
 
-const correctPassword = "valzhang";
-let currentLink = "";
+// password
 
-document.querySelectorAll(".popup-trigger")
-.forEach(btn =>
-  btn.addEventListener("click", e => {
-      // stash the link
-      currentLink = e.currentTarget.dataset.link;
-      // reset to hidden state on open:
-      pwdInput.type = "password";
-      iconImg.src  = ICON_OFF;
-      iconImg.alt  = "Show password";
-      // show the modal
-      const modal = document.getElementById("password-modal");
-      modal.classList.add("is-visible");
-      // auto-focus the input
-      document.getElementById("password-input").focus();
-    })
-  );
+// main.js
 
+document.addEventListener("DOMContentLoaded", () => {
+  // Only run on the dtcpay overview page
+const path = window.location.pathname;
+// only continue if we’re on work_1 OR work_2
+if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html")) return;
 
-document.getElementById("password-submit")
-.addEventListener("click", () => {
- const pwd = document.getElementById("password-input").value;
- if (pwd === correctPassword) {
-  window.open(currentLink, "_blank");
-  closeModal();
-} else {
- alert("Incorrect password. Please contact Val.");
-}
+  const modal            = document.getElementById("password-modal");
+  const protectedContent = document.getElementById("protected-content");
+  const pwdInput         = document.getElementById("password-input");
+  const toggleBtn        = document.getElementById("toggle-password");
+  const iconImg          = document.getElementById("password-icon");
+  const submitBtn        = document.getElementById("password-submit");
+  const closeIcon        = document.querySelector(".cd-popup-close");
+
+  const correctPassword  = "valzhang";
+  const ICON_ON          = "assets/img/home/visible_on.svg";
+  const ICON_OFF         = "assets/img/home/visible_off.svg";
+
+  // 1) Show modal immediately and hide the rest
+  modal.classList.add("is-visible");
+  protectedContent.style.display = "none";
+  document.body.style.overflow   = "hidden";
+  if (pwdInput) pwdInput.focus();
+
+  // 2) Toggle “eye” icon to show/hide the password
+  toggleBtn.addEventListener("click", () => {
+    const isHidden = pwdInput.type === "password";
+    pwdInput.type = isHidden ? "text" : "password";
+    iconImg.src   = isHidden ? ICON_ON : ICON_OFF;
+    iconImg.alt   = isHidden ? "Hide password" : "Show password";
+  });
+
+  // 3) Handle “Show me” button
+  submitBtn.addEventListener("click", () => {
+    if (pwdInput.value === correctPassword) {
+      // ✅ correct – reveal page
+      modal.classList.remove("is-visible");
+      protectedContent.style.display = "";
+      document.body.style.overflow   = "";
+    } else {
+      // ❌ wrong – stay in modal
+      alert("Incorrect password. Please try again.");
+      pwdInput.focus();
+    }
+  });
+
+  // 4) If user manually closes or clicks outside, redirect to index.html
+
+closeIcon.addEventListener("click", () => history.back());
+  window.addEventListener("click", e => {
+    if (e.target === modal) history.back();
+  });
 });
-
-
-
-// Paths to your icons
-const ICON_ON  = "assets/img/home/visible_on.svg";
-const ICON_OFF = "assets/img/home/visible_off.svg";
-
-const pwdInput = document.getElementById("password-input");
-const toggleBtn = document.getElementById("toggle-password");
-const iconImg   = document.getElementById("password-icon");
-
-toggleBtn.addEventListener("click", () => {
-  const isHidden = pwdInput.type === "password";
-  // flip input type
-  pwdInput.type = isHidden ? "text" : "password";
-  // swap icon and alt text
-  iconImg.src = isHidden ? ICON_ON : ICON_OFF;
-  iconImg.alt = isHidden ? "Hide password" : "Show password";
-});
-
-
-
-// 4) modal close logic
-function closeModal() {
-  document.getElementById("password-modal")
-  .classList.remove("is-visible");
-  document.getElementById("password-input").value = "";
-  currentLink = "";
-}
-
-// close on “×”
-document.querySelector(".cd-popup-close")
-.addEventListener("click", closeModal);
-
-// close on outside click
-window.addEventListener("click", e => {
-  if (e.target.id === "password-modal") closeModal();
-});
-
-
-
-// fire the “Show me” click when Enter is pressed
-pwdInput.addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    e.preventDefault();                       // prevent any default form submission
-    document.getElementById("password-submit")
-            .click();                         // reuse your existing click handler
-          }
-        });
-
 
