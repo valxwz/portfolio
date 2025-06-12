@@ -217,6 +217,12 @@ if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html")
   protectedContent.style.display = "none";
   document.body.style.overflow   = "hidden";
   if (pwdInput) pwdInput.focus();
+  pwdInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    submitBtn.click();
+  }
+});
+
 
   // 2) Toggle “eye” icon to show/hide the password
   toggleBtn.addEventListener("click", () => {
@@ -233,6 +239,7 @@ if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html")
       modal.classList.remove("is-visible");
       protectedContent.style.display = "";
       document.body.style.overflow   = "";
+      new WOW().init();
     } else {
       // ❌ wrong – stay in modal
       alert("Incorrect password. Please try again.");
