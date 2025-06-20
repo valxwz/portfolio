@@ -2176,7 +2176,7 @@ xpopup
   content: "";
   position: absolute;
   width: 100%;
-  height: 20px; /* <- exact height you want */
+  height: 10px; /* <- exact height you want */
   bottom: 0;
   left: 0;
   background-color: #CBD8FB;
