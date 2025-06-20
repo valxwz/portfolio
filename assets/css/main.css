@@ -237,6 +237,8 @@ a:not([href]):not([tabindex]) {
   background-image: linear-gradient(to right, transparent 50%, #E9D0D0 50%);
 }
 
+
+
 .section-nav {
   transition: opacity 0.3s ease-in-out;
 }
@@ -2161,4 +2163,37 @@ xpopup
     margin: 8em auto;
   }
 
+}
+
+
+.highlight-main.animate-on-load {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight-main.animate-on-load::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px; /* <- exact height you want */
+  bottom: 0;
+  left: 0;
+  background-color: #CBD8FB;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: highlightGrow 0.7s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes highlightGrow {
+  from {
+    transform: scaleX(0);
+    opacity: 0.3;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
