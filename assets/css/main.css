@@ -214,6 +214,8 @@ a:not([href]):not([tabindex]) {
   background-image: linear-gradient(to right, transparent 50%, var(--highlight-main) 50%);
 }
 
+
+
 .highlight-ava {
   background-image: linear-gradient(to right, transparent 50%, var(--highlight-ava) 50%);
 }
@@ -228,6 +230,10 @@ a:not([href]):not([tabindex]) {
 
 .highlight-levels {
   background-image: linear-gradient(to right, transparent 50%, #DBFBE3 50%);
+}
+
+.highlight-nv {
+  background-image: linear-gradient(to right, transparent 50%, #E9D0D0 50%);
 }
 
 .section-nav {
@@ -273,6 +279,12 @@ a:not([href]):not([tabindex]) {
   /* The image used */
   background-image: url("../img/dtcpay-img/dtcpay_case1_landing.png"); 
 }
+
+.nv-case1-parallax{
+  /* The image used */
+  background-image: url("../img/nv-img/nv_case1_landing.png"); 
+}
+
 
 .dtcpay-case2-parallax{
   background-image: url("../img/dtcpay-img/dtcpay_case2_landing.png"); 

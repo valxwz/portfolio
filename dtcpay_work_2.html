@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>dtcpay Work</title>
+        <title>dtcpay Case 2</title>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <!-- Icon -->
         <link rel="stylesheet" href="assets/fonts/line-icons.css">
@@ -35,32 +35,29 @@
     </head>
     <body>
         <!-- password pop up -->
-           <div id="password-modal" class="cd-popup" role="alert">
-          <div class="cd-popup-container password-actions">
-            
-            <span class="cd-popup-close close">&times;</span>
-
-            <h4>Non-Disclosure Case</br>Access with Password</h4>
-            <p style="padding: 0;margin-bottom: 0;">See <a href="assets/files/valzhang2025.pdf" target="_blank">resume </a> for password.</p>
-            <div class="password-field">            
-                <input id="password-input" type="password" placeholder="Password (on resume)"/>
-                <button
-                type="button"
-                id="toggle-password"
-                class="toggle-password"
-                aria-label="Show or hide password"
-                >
-                <img
-                id="password-icon"
-                src="assets/img/home/visible_off.svg"
-                alt="Show password"
-                />
-            </button>
+ <div id="password-modal" class="cd-popup" role="alert">
+            <div class="cd-popup-container password-actions">
+                <span class="cd-popup-close close">&times;</span>
+                <h4>Non-Disclosure Case</br>Access with Password</h4>
+                <p style="padding: 0;margin-bottom: 0;">See <a href="assets/files/valzhang2025.pdf" target="_blank">resume </a> for password.</p>
+                <div class="password-field">
+                    <input id="password-input" type="password" placeholder="Password (on resume)"/>
+                    <button
+                    type="button"
+                    id="toggle-password"
+                    class="toggle-password"
+                    aria-label="Show or hide password"
+                    >
+                    <img
+                    id="password-icon"
+                    src="assets/img/home/visible_off.svg"
+                    alt="Show password"
+                    />
+                    </button>
+                </div>
+                <button class="btn-border" id="password-submit">Show me</button>
+            </div>
         </div>
-        <button class="btn-border" id="password-submit">Show me</button>
-
-        </div>
-        </div> 
         <div id="protected-content">
             <!-- Header Area wrapper Starts -->
             <header id="header-wrap">
@@ -100,12 +97,9 @@
                 </nav>
                 <div id="sidenav" class="section-nav">
                     <ol>
-                        <li><a href="#overview">Overview</a></li>
-                        <li><a href="#design-process">Design Process</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#design">Design</a></li>
-                        <li><a href="#final">Final Prototype</a></li>
-                        <li><a href="#reflection">Reflection</a></li>
+                        <li><a href="#case_overview">Case Overview</a></li>
+                        <li><a href="#design_process">Design Process</a></li>
+                        <li><a href="#solution_details">Solution Details</a></li>
                     </ol>
                 </div>
                 <!-- head img start-->
@@ -157,7 +151,7 @@
             
             <!-- dtcpay case 1 details -->
             <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
-                <section id="context_gathering">
+                <section id="case_overview">
                     <div class="text-center section-header wow fadeInDown"><h2 class="section-title" data-wow-delay="0.1s">Case Overview</h2>
                         <div class="shape" data-wow-delay="0.1s"></div>
                     </div>
@@ -189,7 +183,7 @@
                 
                 <!-- Process -->
                 <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
-                    <section id="alignment">
+                    <section id="design_process">
                         <div class="text-center section-header wow fadeInDown"><h2 class="section-title" data-wow-delay="0.1s">Design Process</h2>
                             <div class="shape" data-wow-delay="0.1s"></div>
                         </div>
@@ -287,7 +281,7 @@
                 
             </section></div>
             <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
-                <section id="alignment">
+                <section id="solution_details">
                     <div class="text-center section-header wow fadeInDown"><h2 class="section-title" data-wow-delay="0.1s">Solution Details</h2>
                         <div class="shape" data-wow-delay="0.1s"></div>
                     </div>
@@ -296,11 +290,12 @@
                         </h3>
                     </div>
                     <p>To view all iterations, success metrics, pixel-level work, design rationales, and tracking points, please refer to the Figma file. The design is scheduled to launch, so impact data isn’t available yet—but the key metrics to track have been documented.</p>
+                    <p>To see the launched work and its impact, check out my <a href="nv_work_1.html">Ninja Van project.</a></p>
                     <div class="text-center">
                         <button
                         type="submit"
                         class="btn btn-with-icon"
-                        onclick="window.open('https://www.figma.com/design/Erya6GIh5VI7MBIa2m9FzH/Val-2025?node-id=1842-315922&t=6GOK53sa4cnEzbHO-11');"
+                        onclick="window.open('https://www.figma.com/board/NA8TuxSox3d8cE62WTHpOp/Val-s-Work?node-id=588-55026&t=CPcQkLCrYrmlMlSS-4');"
                         >
                         <img
                         src="assets/img/dtcpay-img/figma-icon.png"
@@ -323,35 +318,43 @@
                     
                     <img class="w-100" src="assets/img/dtcpay-img/design_iteration_2.png" alt="design_iteration_2.png">
                     <img class="w-100" src="assets/img/dtcpay-img/work2_iteration_overview.png" alt="work2_iteration_overview.png">
-
-                     <div class="site-heading">
+                    <div class="site-heading">
                         <h3>Future Consideration
                         </h3>
                     </div>
                     <p>
                         The current voucher design <span class="highlight highlight-cinetrip">prioritizes minimal implementation</span> by reusing our existing list component, focusing more on partner visibility than the actual discount amount. However, it doesn’t account for more complex voucher rules or highlight key details like discount value or usage frequency. As we <span class="highlight highlight-cinetrip">introduce varied discount types</span>, a new design will be needed. I’ve explored future design directions here. Curious about my design rationale? Let’s chat!
                     </p>
-
- 
-                        <img class="w-100" src="assets/img/dtcpay-img/next_upgrade.png" alt="next_upgrade.png">
-
-  
-             
-                       <div class="text-section">
-            <div class="site-heading">
-                <h3>Lesson Learned
-                </h3>
-                 </div>
-                <p>Want to know what I learned from this work? Talk to me! I don't bite :)
-                </p>
-           
-        </div>
-
-
-
-
+                    
+                    <img class="w-100" src="assets/img/dtcpay-img/next_upgrade.png" alt="next_upgrade.png">
+                    
+                    
+                    <div class="text-section">
+                        <div class="site-heading">
+                            <h3>Lesson Learned
+                            </h3>
+                        </div>
+                        <p>Want to know what I learned from this work? Talk to me! I don't bite :)
+                        </p>
+                        
+                    </div>
                 </section>
             </div>
+
+
+
+             <!-- switch project -->
+            <div class="work-container section-padding fadeInDown row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch_active">Current: dtcpay case 2</div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="dtcpay_work_overview.html#choose_one">Next: dtcpay others</a></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="index.html#work">View more work</a></div>
+            </div>
+
+
+
+
+
+
             <!-- footer -->
             <footer id="footer" class="footer-area section-padding">
                 <div id="copyright">

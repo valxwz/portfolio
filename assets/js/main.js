@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Only run on the dtcpay overview page
 const path = window.location.pathname;
 // only continue if we’re on work_1 OR work_2
-if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html")) return;
+if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html") && !path.endsWith("nv_work_1.html")) return;
 
   const modal            = document.getElementById("password-modal");
   const protectedContent = document.getElementById("protected-content");

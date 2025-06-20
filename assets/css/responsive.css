@@ -68,6 +68,51 @@
       /* The image used */
       background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
     }
+    .dtcpay-case1-parallax {
+  /* The image used */
+  background-image: url("../img/dtcpay-img/dtcpay_case1_mobile.png");
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Set a specific height */
+}
+
+.dtcpayOverview-parallax {
+  /* The image used */
+  background-image: url("../img/dtcpay-img/dtcpay_overview_mobile.png");
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Set a specific height */
+}
+
+
+.dtcpay-case2-parallax {
+  /* The image used */
+  background-image: url("../img/dtcpay-img/dtcpay_case2_mobile.png");
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Set a specific height */
+}
+
+
+.nvOverview-parallax {
+  /* The image used */
+  background-image: url("../img/nv-img/nv_overview_mobile.png");
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Set a specific height */
+}
+.nv-case1-parallax {
+  /* The image used */
+  background-image: url("../img/nv-img/nv_case1_mobile.png");
+   background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Set a specific height */
+}
 
 
 

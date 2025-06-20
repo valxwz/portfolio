@@ -84,7 +84,7 @@
         <!-- main body starts -->
         <!-- Overview -->
         <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
-            <section id="about_the_company">
+            <section id="company_role">
                 <div class="text-center section-header wow fadeInDown"><h2 class="section-title" data-wow-delay="0.1s">The Company & My Role</h2>
                     <div class="shape" data-wow-delay="0.1s"></div>
                 </div>
@@ -113,7 +113,7 @@ Our design focus is on driving <span class="highlight highlight-cinetrip"> adopt
             </section>
         </div>
         <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
-            <section id="about_the_company">
+            <section id="choose_one">
                 <div class="text-center section-header wow fadeInDown"><h2 class="section-title" data-wow-delay="0.1s">Choose One to Continue</h2>
                     <div class="shape" data-wow-delay="0.1s"></div>
                 </div>
@@ -133,13 +133,6 @@ Our design focus is on driving <span class="highlight highlight-cinetrip"> adopt
                 <a href="dtcpay_work_3.html"><img class="img-fluid feature-img-fluid clickable-image" style="margin-top: 30px;" src="assets/img/dtcpay-img/case_3.png" alt="case_3.png"></a>
             </div>
             </section>
-        </div>
-
-         <!-- switch project -->
-        <div class="work-container section-padding fadeInDown row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch_active">Current: dtcpay</div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="ninja_van.html">Next: Ninja Van</a></div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="index.html#work">View More Work</a></div>
         </div>
         
 <!-- footer -->
@@ -181,5 +174,22 @@ Our design focus is on driving <span class="highlight highlight-cinetrip"> adopt
 <script src="assets/js/main.js"></script>
 <script src="assets/js/side_nav.js"></script>
 </div>
+
+
+<script>
+  window.addEventListener('load', function () {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 300); // delay lets wow.js animate in first
+      }
+    }
+  });
+</script>
+
+
+
 </body>
 </html>
