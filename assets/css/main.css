@@ -271,12 +271,9 @@ a:not([href]):not([tabindex]) {
 }
 
 .nvOverview-parallax {
-  /* The image used */
- 
   background-image: url("../img/nv-img/nv_overview_landing.png");
-
-   /* Set a specific height */
 }
+
 
 .dtcpay-case1-parallax{
   /* The image used */
@@ -2197,3 +2194,12 @@ xpopup
     opacity: 1;
   }
 }
+
+
+
+
+
+
+
+
+

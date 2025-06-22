@@ -96,15 +96,15 @@
     /* Set a specific height */
 }
 
-
 .nvOverview-parallax {
-  /* The image used */
   background-image: url("../img/nv-img/nv_overview_mobile.png");
    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* Set a specific height */
+        height: 500px;
 }
+
+
 .nv-case1-parallax {
   /* The image used */
   background-image: url("../img/nv-img/nv_case1_mobile.png");
@@ -437,3 +437,8 @@
     }
 
   }
+
+
+
+
+
