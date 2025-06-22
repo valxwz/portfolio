@@ -96,13 +96,6 @@
     /* Set a specific height */
 }
 
-.nvOverview-parallax {
-  background-image: url("../img/nv-img/nv_overview_mobile.png");
-   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-        height: 500px;
-}
 
 
 .nv-case1-parallax {
@@ -441,4 +434,13 @@
 
 
 
-
+@media screen and (max-width: 991px) {
+  .nvOverview-parallax {
+    background-image: url("../img/nv-img/nv_overview_mobile.png");
+       background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll !important;
+    display: block;
+  }
+}
