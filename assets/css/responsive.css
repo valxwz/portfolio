@@ -378,7 +378,11 @@
   .dtcpay-case1-parallax,
   .dtcpayOverview-parallax,
   .dtcpay-case2-parallax,
-  .nv-case1-parallax {
+  .nv-case1-parallax,
+  .gm-parallax,
+    .levels-parallax,
+      .ava-parallax
+     {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
