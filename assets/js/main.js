@@ -242,7 +242,7 @@ if (!path.endsWith("dtcpay_work_1.html") && !path.endsWith("dtcpay_work_2.html")
       new WOW().init();
     } else {
       // ❌ wrong – stay in modal
-      alert("Incorrect password. Please try again.");
+      alert("Incorrect password. Please contact Val or try again.");
       pwdInput.focus();
     }
   });
