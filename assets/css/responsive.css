@@ -38,6 +38,9 @@
 
 }
 
+
+
+
 /* tablets */
 @media screen and (max-width: 991px), screen and (max-device-width: 768px) {
 
@@ -45,68 +48,6 @@
       min-height: 650px; /* Set a specific height */
       background-size: auto;
     }
-
-
-    .gm-parallax {
-      /* The image used */
-      background-image: url("../img/gm-img/gm_mobile.png");
-    }
-
-    .levels-parallax {
-
-      /* The image used */
-      background-image: url("../img/levels-img/levels_mobile.png");
-    }
-
-    .ava-parallax {
-      /* The image used */
-      background-image: url("../img/ava-img/ava_mobile.png");
-    }
-
-    .cinetrip-parallax {
-
-      /* The image used */
-      background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
-    }
-    .dtcpay-case1-parallax {
-  /* The image used */
-  background-image: url("../img/dtcpay-img/dtcpay_case1_mobile.png");
-   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Set a specific height */
-}
-
-.dtcpayOverview-parallax {
-  /* The image used */
-  background-image: url("../img/dtcpay-img/dtcpay_overview_mobile.png");
-   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Set a specific height */
-}
-
-
-.dtcpay-case2-parallax {
-  /* The image used */
-  background-image: url("../img/dtcpay-img/dtcpay_case2_mobile.png");
-   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Set a specific height */
-}
-
-
-
-.nv-case1-parallax {
-  /* The image used */
-  background-image: url("../img/nv-img/nv_case1_mobile.png");
-   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Set a specific height */
-}
-
 
 
   .feature-img-fluid {
@@ -432,15 +373,52 @@
   }
 
 
-
-
 @media screen and (max-width: 991px) {
-  .nvOverview-parallax {
-    background-image: url("../img/nv-img/nv_overview_mobile.png");
-       background-size: cover;
+  .nvOverview-parallax,
+  .dtcpay-case1-parallax,
+  .dtcpayOverview-parallax,
+  .dtcpay-case2-parallax,
+  .nv-case1-parallax {
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll !important;
     display: block;
+  }
+
+  .nvOverview-parallax {
+    background-image: url("../img/nv-img/nv_overview_mobile.png");
+  }
+
+  .gm-parallax {
+    background-image: url("../img/gm-img/gm_mobile.png");
+  }
+
+  .levels-parallax {
+    background-image: url("../img/levels-img/levels_mobile.png");
+  }
+
+  .ava-parallax {
+    background-image: url("../img/ava-img/ava_mobile.png");
+  }
+
+  .cinetrip-parallax {
+    background-image: url("../img/cinetrip-img/cinetrip_mobile.png");
+  }
+
+  .dtcpay-case1-parallax {
+    background-image: url("../img/dtcpay-img/dtcpay_case1_mobile.png");
+  }
+
+  .dtcpayOverview-parallax {
+    background-image: url("../img/dtcpay-img/dtcpay_overview_mobile.png");
+  }
+
+  .dtcpay-case2-parallax {
+    background-image: url("../img/dtcpay-img/dtcpay_case2_mobile.png");
+  }
+
+  .nv-case1-parallax {
+    background-image: url("../img/nv-img/nv_case1_mobile.png");
   }
 }
