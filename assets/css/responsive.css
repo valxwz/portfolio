@@ -11,6 +11,11 @@
 
   /* only small desktops */
 @media screen and (min-width:992px) {
+
+  #case1-img-mobile {
+    display: none;
+  }
+
   #mobile-demo {
     display: none !important;
   }
@@ -425,4 +430,18 @@
   .nv-case1-parallax {
     background-image: url("../img/nv-img/nv_case1_mobile.png");
   }
+
+
+#case1-img {
+    display: none;
+  }
+
+  #case1-img-mobile {
+    display: block;
+ 
+  }
+
+
 }
+
+
