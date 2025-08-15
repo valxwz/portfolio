@@ -2194,6 +2194,20 @@ xpopup
   }
 }
 
+/* Mobile: make highlight hug text only, not the whole line */
+@media (max-width: 576px) {
+  .highlight-index {
+    display: inline;
+    background: linear-gradient(transparent 60%, #CBD8FB 0) no-repeat;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0 0.02em;
+  }
+  .highlight-index::before {
+    content: none;
+  }
+}
+
 
 
 
