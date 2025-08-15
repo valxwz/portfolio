@@ -421,7 +421,7 @@ color:#3d5af1;
 }
 
 .section-header p {
-  text: center;
+  text-align: center;
   font-weight: 400;
   line-height: 26px;
 }
@@ -1159,7 +1159,7 @@ hr {
 }
 
 .navbar li.active a.nav-link {
-  color: #preset;
+  color: #3d5af1;
 }
 
 .dropdown-toggle::after {
@@ -1806,7 +1806,7 @@ textarea {
 /*cta
 */
 #cta {
-  background:;
+  background: transparent;
 }
 
 /* Footer Area Start */
@@ -2179,6 +2179,10 @@ xpopup
   z-index: -1;
   transform: scaleX(0);
   transform-origin: left;
+  /* Animation is applied only when .animate is present to avoid double-run */
+}
+
+.highlight-index.animate::before {
   animation: highlightGrow 0.7s ease-out forwards;
   animation-delay: var(--delay, 0s);
 }
@@ -2196,15 +2200,40 @@ xpopup
 
 /* Mobile: make highlight hug text only, not the whole line */
 @media (max-width: 576px) {
-  .highlight-index {
+  /* On mobile, avoid animations to prevent flicker; keep a static underline */
+  .highlight.highlight-index {
     display: inline;
     background: linear-gradient(transparent 60%, #CBD8FB 0) no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    /* No animation by default to prevent double-run on font swap */
+    animation: none;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     padding: 0 0.02em;
+    transition: none !important;
   }
-  .highlight-index::before {
+  .highlight.highlight-index.shown {
+    background-position: left bottom;
+  }
+  .highlight.highlight-index::before {
     content: none;
+  }
+  /* Trigger animation only when .animate is present */
+  .highlight.highlight-index.animate {
+    animation: highlightFill 0.7s ease-out forwards;
+    animation-delay: var(--delay, 0s);
+  }
+}
+
+@keyframes highlightFill {
+  from {
+    background-size: 0% 100%;
+    opacity: 0.3;
+  }
+  to {
+    background-size: 100% 100%;
+    opacity: 1;
   }
 }
 

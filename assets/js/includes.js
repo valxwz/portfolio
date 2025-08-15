@@ -9,6 +9,16 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
     }
     
+    let completedCount = 0;
+
+    const markComplete = () => {
+        completedCount += 1;
+        if (completedCount === elements.length) {
+            console.log("All includes loaded");
+            window.dispatchEvent(new Event('includes:loaded'));
+        }
+    };
+
     elements.forEach((el, index) => {
         const file = el.getAttribute("data-include");
         console.log(`Processing include ${index + 1}: ${file}`);
@@ -25,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(data => {
                 console.log(`Successfully loaded ${file}, length: ${data.length}`);
                 el.innerHTML = data;
+                markComplete();
             })
             .catch(err => {
                 console.error(`Failed to load ${file}:`, err.message);
@@ -36,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     console.log("Try using a local web server instead.");
                     console.log("Run: python3 -m http.server 8000 in your project directory");
                 }
+                markComplete();
             });
     });
 });

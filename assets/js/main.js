@@ -21,6 +21,11 @@
     }
   });
 
+  // In case dynamic includes delay layout, hide preloader once includes finished too
+  window.addEventListener('includes:loaded', function() {
+    $('#preloader').fadeOut();
+  });
+
     // one page navigation 
     $('.navbar-nav').onePageNav({
       currentClass: 'active'
@@ -152,7 +157,7 @@ $(".highlight-link").each(function(){
 
 
 $(window).scroll(function(){
-  $(".highlight").each(function(){
+  $(".highlight").not(".highlight-index").each(function(){
     if ( $(this).isOnScreenHighlight() ) {
       $(this).addClass('shown');
     } else {
@@ -189,6 +194,19 @@ $.fn.isOnScreenHighlight = function(){
   return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.bottom || viewport.top > bounds.bottom));
 
 };
+
+// Trigger hero underline animation exactly once after fonts/layout are ready
+(function(){
+  function runOnce(){
+    var nodes = document.querySelectorAll('.highlight-index');
+    nodes.forEach(function(el){ el.classList.add('animate'); });
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(runOnce);
+  } else {
+    window.addEventListener('load', function(){ setTimeout(runOnce, 50); });
+  }
+})();
 
 // password
 
