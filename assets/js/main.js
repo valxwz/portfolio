@@ -56,13 +56,7 @@
 
     wow.init();
 
-    /* 
-    CounterUp
-    ========================================================================== */
-    $('.counter').counterUp({
-      time: 500
-    });  
-    
+    // CounterUp - removed (no .counter elements in HTML)
 
           /* Testimonials Carousel - REMOVED (no testimonials sections in HTML)
      ========================================================*/
