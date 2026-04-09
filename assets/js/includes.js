@@ -1,40 +1,60 @@
+function initNavFromInclude(containerEl) {
+    var variant = containerEl.getAttribute("data-nav-page") || "work";
+    var nav = containerEl.querySelector("nav");
+    if (!nav) return;
+
+    var homeLi = nav.querySelector("[data-nav-home-li]");
+    var homeA = nav.querySelector("[data-nav-home]");
+    var workA = nav.querySelector("[data-nav-work]");
+    var aboutLi = nav.querySelector("[data-nav-about-li]");
+
+    nav.querySelectorAll(".nav-item.active").forEach(function (el) {
+        el.classList.remove("active");
+    });
+    nav.querySelectorAll(".nav-link.active").forEach(function (el) {
+        el.classList.remove("active");
+    });
+
+    if (variant === "home") {
+        if (homeA) homeA.setAttribute("href", "#hero-area");
+        if (workA) workA.setAttribute("href", "#work");
+        if (homeLi) homeLi.classList.add("active");
+    } else if (variant === "about") {
+        if (aboutLi) aboutLi.classList.add("active");
+    } else {
+        if (workA) workA.classList.add("active");
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Includes.js loaded, looking for elements with data-include");
-    
-    const elements = document.querySelectorAll("[data-include]");
-    console.log(`Found ${elements.length} elements to include`);
-    
+    var elements = document.querySelectorAll("[data-include]");
+
     if (elements.length === 0) {
-        console.log("No elements with data-include found");
         return;
     }
-    
-    let completedCount = 0;
 
-    const markComplete = () => {
+    var completedCount = 0;
+
+    var markComplete = function () {
         completedCount += 1;
         if (completedCount === elements.length) {
-            console.log("All includes loaded");
-            window.dispatchEvent(new Event('includes:loaded'));
+            window.dispatchEvent(new Event("includes:loaded"));
         }
     };
 
-    elements.forEach((el, index) => {
-        const file = el.getAttribute("data-include");
-        console.log(`Processing include ${index + 1}: ${file}`);
-        
-        // Try to fetch the file
-        console.log(`Attempting to fetch: ${file}`);
-        
+    elements.forEach(function (el) {
+        var file = el.getAttribute("data-include");
+
         fetch(file)
-            .then(response => {
-                console.log(`Response for ${file}:`, response.status, response.statusText);
-                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            .then(function (response) {
+                if (!response.ok) throw new Error("HTTP " + response.status + ": " + response.statusText);
                 return response.text();
             })
-            .then(data => {
-                console.log(`Successfully loaded ${file}, length: ${data.length}`);
+            .then(function (data) {
                 el.innerHTML = data;
+                if (el.hasAttribute("data-nav-page")) {
+                    initNavFromInclude(el);
+                }
                 markComplete();
             })
             .catch(err => {

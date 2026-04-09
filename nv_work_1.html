@@ -62,40 +62,7 @@
         <div id="protected-content">
             <!-- Header Area wrapper Starts -->
             <header id="header-wrap">
-                <!-- Navbar Start -->
-                <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar nav-down">
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <a href="index.html" class="navbar-brand"><img src="assets/img/new_logo-03.png" alt="logo"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="lni-menu"></i>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="navbar-nav mr-auto w-100 justify-content-end clearfix">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">
-                                        HOME
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="index.html#work">
-                                        WORK
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="assets/files/valzhang2026.pdf" target="_blank">
-                                        RESUME
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.html">
-                                        ABOUT
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                <div data-include="partials/nav.html" data-nav-page="work"></div>
                 <div id="sidenav" class="section-nav">
                     <ol>
                         <li><a href="#case_overview">Case Overview</a></li>
@@ -402,20 +369,7 @@ Unlikely. Max status error: ~6 per user. Max path error group: ~4 per user.</p>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="index.html#work">Others</a></div>
             </div>
                     
-                        <!-- footer -->
-                        <footer id="footer" class="footer-area section-padding">
-                            <div id="copyright">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="copyright-content">
-                                                <p>© 2026 by Val. Designed & coded with ❤️</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
+                        <div data-include="partials/footer.html"></div>
                         <!-- Feature Section End -->
                         <!-- Preloader -->
                         <div id="preloader">
@@ -432,6 +386,7 @@ Unlikely. Max status error: ~6 per user. Max path error group: ~4 per user.</p>
                         <!-- <script src="assets/js/jquery.easing.min.js"></script> -->
                         <!-- <script src="assets/js/jquery.counterup.min.js"></script> -->
                         <!-- <script src="assets/js/waypoints.min.js"></script> -->
+                        <script src="assets/js/includes.js"></script>
                         <script src="assets/js/main.js"></script>
                         <script src="assets/js/side_nav.js"></script>
                     </div>
