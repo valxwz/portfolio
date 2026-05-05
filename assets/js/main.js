@@ -267,3 +267,75 @@ closeIcon.addEventListener("click", () => history.back());
   });
 });
 
+// Exploding burger scroll animation
+(function() {
+  const burgerStack = document.getElementById("burgerStack");
+  const burgerSection = document.getElementById("burger-explosion");
+  if (!burgerStack || !burgerSection) return;
+
+  // Toggle these values to control the collapsed and expanded spacing between layers.
+  // collapsed = starting spacing; expanded = spacing when the burger is fully exploded.
+  const isMobile = window.innerWidth < 992;
+  const spacingMap = isMobile ? [
+    { cssVar: "--space-1-2", collapsed: -35, expanded: 5 },
+    { cssVar: "--space-2-3", collapsed: -45, expanded: 5 },
+    { cssVar: "--space-3-4", collapsed: -80, expanded: -10 },
+    { cssVar: "--space-4-5", collapsed: -50, expanded: 5 }
+  ] : [
+    { cssVar: "--space-1-2", collapsed: -70, expanded: -10 },
+    { cssVar: "--space-2-3", collapsed: -80, expanded: -20 },
+    { cssVar: "--space-3-4", collapsed: -140, expanded: -60 },
+    { cssVar: "--space-4-5", collapsed: -80, expanded: -20 }
+  ];
+
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  const lerp = (start, end, t) => start + (end - start) * t;
+
+  const updateBurgerSpacing = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const progress = clamp(scrollTop / (windowHeight * 0.5), 0, 1);
+    const explodeThreshold = isMobile ? 0.2 : 0.8;
+    const isExploded = progress > explodeThreshold;
+
+    spacingMap.forEach(({ cssVar, collapsed, expanded }) => {
+      const value = isExploded ? expanded : collapsed;
+      burgerStack.style.setProperty(cssVar, `${value}px`);
+    });
+
+    const label = document.getElementById("topBunLabel");
+    const lettuceLabel = document.getElementById("lettuceLabel");
+    const cheeseLabel = document.getElementById("cheeseLabel");
+    const meatLabel = document.getElementById("meatLabel");
+    const bottomBunLabel = document.getElementById("bottomBunLabel");
+
+    const labels = [label, lettuceLabel, cheeseLabel, meatLabel, bottomBunLabel];
+
+    labels.forEach(label => {
+      if (label) {
+        if (isExploded) {
+          label.classList.add("visible");
+        } else {
+          label.classList.remove("visible");
+        }
+      }
+    });
+  };
+
+  let scheduled = false;
+  const onScroll = () => {
+    if (!scheduled) {
+      scheduled = true;
+      window.requestAnimationFrame(() => {
+        updateBurgerSpacing();
+        scheduled = false;
+      });
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", updateBurgerSpacing);
+  window.addEventListener("load", updateBurgerSpacing);
+  updateBurgerSpacing();
+})();
+

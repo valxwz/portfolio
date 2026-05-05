@@ -1267,7 +1267,7 @@ hr {
   min-height: 850px;
   position: relative;
   overflow: hidden;
-  padding: 80px 0 80px;
+  padding: 80px 0 0;
 }
 
 #hero-area .contents .head-title {
@@ -1918,6 +1918,123 @@ i.fas, i.fab {
 .social-icon a {
   color: #272727;
   background: #fff;
+}
+
+/* Burger explosion scroll animation */
+#burger-explosion {
+  background: url("../img/home/burger/kitchen_background.png") center center/cover no-repeat;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+#burger-explosion .section-header {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+#burger-explosion .burger-caption {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.75rem;
+}
+
+#burger-explosion .burger-explosion-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#burgerStack {
+  width: 30vw;
+  max-width: 320px;
+  min-width: 180px;
+  margin: 0 auto;
+}
+
+.burger-layer {
+  display: block;
+  transition: margin 0.5s ease, transform 0.5s ease;
+  position: relative;
+}
+
+.burger-layer[data-layer="1"] { z-index: 5; }
+.burger-layer[data-layer="2"] { z-index: 4; }
+.burger-layer[data-layer="3"] { z-index: 3; }
+.burger-layer[data-layer="4"] { z-index: 2; }
+.burger-layer[data-layer="5"] { z-index: 1; }
+
+.burger-layer img {
+  width: 100%;
+  display: block;
+}
+
+.burger-layer:nth-child(1) {
+  margin-bottom: var(--space-1-2);
+}
+
+.burger-layer:nth-child(2) {
+  margin-bottom: var(--space-2-3);
+}
+
+.burger-layer:nth-child(3) {
+  margin-bottom: var(--space-3-4);
+}
+
+.burger-layer:nth-child(4) {
+  margin-bottom: var(--space-4-5);
+}
+
+.burger-layer:last-child {
+  margin-bottom: 0;
+}
+
+.burger-label {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translateY(-50%);
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.1rem 1rem;
+  border: 2px solid #333;
+  border-radius: 50px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.burger-label-dot {
+  font-size: 18px;
+  line-height: 1;
+  margin-right: 0.25rem;
+}
+
+.burger-label.visible {
+  opacity: 1;
+}
+
+#cheeseLabel {
+  top: 35%;
+}
+
+@media screen and (max-width: 991px) {
+  .burger-label {
+    font-size: 14px;
+  }
+}
+
   width: 35px;
   height: 34px;
   line-height: 34px;
