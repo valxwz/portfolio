@@ -289,7 +289,7 @@
     }
 
     #hero-area {
-      padding: 120px 0 80px;
+      padding: 120px 0 0;
     }
 
     #hero-area .contents .btn {
@@ -442,5 +442,4 @@
 
 
 }
-
 

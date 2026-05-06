@@ -273,33 +273,48 @@ closeIcon.addEventListener("click", () => history.back());
   const burgerSection = document.getElementById("burger-explosion");
   if (!burgerStack || !burgerSection) return;
 
-  // Toggle these values to control the collapsed and expanded spacing between layers.
-  // collapsed = starting spacing; expanded = spacing when the burger is fully exploded.
-  const isMobile = window.innerWidth < 992;
-  const spacingMap = isMobile ? [
-    { cssVar: "--space-1-2", collapsed: -35, expanded: 5 },
-    { cssVar: "--space-2-3", collapsed: -45, expanded: 5 },
-    { cssVar: "--space-3-4", collapsed: -80, expanded: -10 },
-    { cssVar: "--space-4-5", collapsed: -50, expanded: 5 }
-  ] : [
-    { cssVar: "--space-1-2", collapsed: -70, expanded: -10 },
-    { cssVar: "--space-2-3", collapsed: -80, expanded: -20 },
-    { cssVar: "--space-3-4", collapsed: -140, expanded: -60 },
-    { cssVar: "--space-4-5", collapsed: -80, expanded: -20 }
+  // Spacing is designed at 320px wide, then scaled with the burger image.
+  // This keeps the collapsed overlap visually consistent across screen sizes.
+  const designStackWidth = 320;
+  const collapsedSpacing = [
+    { cssVar: "--space-1-2", value: -60 },
+    { cssVar: "--space-2-3", value: -100 },
+    { cssVar: "--space-3-4", value: -130 },
+    { cssVar: "--space-4-5", value: -85 }
   ];
+  const expandedSpacing = {
+    mobile: {
+      "--space-1-2": 5,
+      "--space-2-3": 5,
+      "--space-3-4": -10,
+      "--space-4-5": 5
+    },
+    desktop: {
+      "--space-1-2": -10,
+      "--space-2-3": -20,
+      "--space-3-4": -60,
+      "--space-4-5": -20
+    }
+  };
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-  const lerp = (start, end, t) => start + (end - start) * t;
 
   const updateBurgerSpacing = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const windowHeight = window.innerHeight;
+    const isMobile = window.innerWidth < 992;
     const progress = clamp(scrollTop / (windowHeight * 0.5), 0, 1);
     const explodeThreshold = isMobile ? 0.2 : 0.8;
     const isExploded = progress > explodeThreshold;
+    const firstLayerImage = burgerStack.querySelector(".burger-layer img");
+    const renderedStackWidth = firstLayerImage
+      ? firstLayerImage.getBoundingClientRect().width
+      : burgerStack.getBoundingClientRect().width;
+    const stackScale = renderedStackWidth / designStackWidth;
+    const activeExpandedSpacing = isMobile ? expandedSpacing.mobile : expandedSpacing.desktop;
 
-    spacingMap.forEach(({ cssVar, collapsed, expanded }) => {
-      const value = isExploded ? expanded : collapsed;
+    collapsedSpacing.forEach(({ cssVar, value: collapsed }) => {
+      const value = isExploded ? activeExpandedSpacing[cssVar] : collapsed * stackScale;
       burgerStack.style.setProperty(cssVar, `${value}px`);
     });
 
@@ -338,4 +353,3 @@ closeIcon.addEventListener("click", () => history.back());
   window.addEventListener("load", updateBurgerSpacing);
   updateBurgerSpacing();
 })();
-
