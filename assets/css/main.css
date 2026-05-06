@@ -2013,7 +2013,7 @@ i.fas, i.fab {
   background: #fff;
   border: 0;
   font-family: 'Baloo Chettan 2', cursive;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.15;
   color: #000;
@@ -2372,6 +2372,8 @@ xpopup
     animation: highlightFill 0.7s ease-out forwards;
     animation-delay: var(--delay, 0s);
   }
+  .burger-label {
+    font-size: 14px;}
 }
 
 @keyframes highlightFill {
@@ -2384,7 +2386,4 @@ xpopup
     opacity: 1;
   }
 }
-
-
-
 
