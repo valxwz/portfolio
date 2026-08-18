@@ -31,21 +31,25 @@ window.addEventListener('DOMContentLoaded', () => {
 const sectionNav = document.getElementById("sidenav");             //  [oai_citation:2‡main.css](file-service://file-VmDnA9TA29CYNwSc7Kcm8C)
 const parallaxBg = document.querySelector(".parallax_bg");        //  [oai_citation:3‡main.css](file-service://file-VmDnA9TA29CYNwSc7Kcm8C)
 
-// Create an observer that toggles nav visibility
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        sectionNav.classList.add("hidden"); 
-      } else {
-        sectionNav.classList.remove("hidden");
-      }
-    });
-  },
-  {
-    root: null,          // viewport
-    threshold: 0         // callback fires as soon as any pixel is visible
-  }
-);
+// Not every work page has a parallax_bg header image — skip the
+// hide-on-scroll behavior entirely when there's nothing to observe.
+if (sectionNav && parallaxBg) {
+  // Create an observer that toggles nav visibility
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sectionNav.classList.add("hidden");
+        } else {
+          sectionNav.classList.remove("hidden");
+        }
+      });
+    },
+    {
+      root: null,          // viewport
+      threshold: 0         // callback fires as soon as any pixel is visible
+    }
+  );
 
-observer.observe(parallaxBg);
+  observer.observe(parallaxBg);
+}
