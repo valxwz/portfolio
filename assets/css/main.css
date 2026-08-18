@@ -237,6 +237,10 @@ a:not([href]):not([tabindex]) {
   background-image: linear-gradient(to right, transparent 50%, #E9D0D0 50%);
 }
 
+.highlight-epam {
+  background-image: linear-gradient(to right, transparent 50%, #e6e4fd 50%);
+}
+
 
 
 .section-nav {
