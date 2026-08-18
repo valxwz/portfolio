@@ -149,6 +149,16 @@ $(".highlight-link").each(function(){
   }
 });
 
+// Also check plain .highlight spans on load — otherwise a highlight
+// that's already in the viewport (e.g. near the top of the page) never
+// gets its "shown" class until the user scrolls at least once.
+$(".highlight").not(".highlight-index").each(function(){
+  if ( $(this).isOnScreenHighlight() ) {
+    $(this).addClass('shown');
+  } else {
+    $(this).removeClass('shown');
+  }
+});
 
 $(window).scroll(function(){
   $(".highlight").not(".highlight-index").each(function(){
