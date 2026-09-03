@@ -141,34 +141,6 @@
 
 // highlight
 
-$(".highlight-link").each(function(){
-  if ( $(this).isOnScreenHighlight() ) {
-    $(this).addClass('shown');
-  } else {
-    $(this).removeClass('shown');
-  }
-});
-
-
-$(window).scroll(function(){
-  $(".highlight").not(".highlight-index").each(function(){
-    if ( $(this).isOnScreenHighlight() ) {
-      $(this).addClass('shown');
-    } else {
-      $(this).removeClass('shown');
-    }
-  });
-
-  $(".highlight-link").each(function(){
-    if ( $(this).isOnScreenHighlight() ) {
-      $(this).css("animation-delay","0s");
-      $(this).addClass('shown');
-    } else {
-      $(this).removeClass('shown');
-    }
-  });
-});
-
 $.fn.isOnScreenHighlight = function(){
 
   // var fix = parseInt($(".navbar").css("height"));
@@ -188,6 +160,44 @@ $.fn.isOnScreenHighlight = function(){
   return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.bottom || viewport.top > bounds.bottom));
 
 };
+
+$(".highlight-link").each(function(){
+  if ( $(this).isOnScreenHighlight() ) {
+    $(this).addClass('shown');
+  } else {
+    $(this).removeClass('shown');
+  }
+});
+
+// Also check plain .highlight spans on load — otherwise a highlight
+// that's already in the viewport (e.g. near the top of the page) never
+// gets its "shown" class until the user scrolls at least once.
+$(".highlight").not(".highlight-index").each(function(){
+  if ( $(this).isOnScreenHighlight() ) {
+    $(this).addClass('shown');
+  } else {
+    $(this).removeClass('shown');
+  }
+});
+
+$(window).scroll(function(){
+  $(".highlight").not(".highlight-index").each(function(){
+    if ( $(this).isOnScreenHighlight() ) {
+      $(this).addClass('shown');
+    } else {
+      $(this).removeClass('shown');
+    }
+  });
+
+  $(".highlight-link").each(function(){
+    if ( $(this).isOnScreenHighlight() ) {
+      $(this).css("animation-delay","0s");
+      $(this).addClass('shown');
+    } else {
+      $(this).removeClass('shown');
+    }
+  });
+});
 
 // Trigger hero underline animation exactly once after fonts/layout are ready
 (function(){

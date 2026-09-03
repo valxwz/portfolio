@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Epam Work</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- Icon -->
+        <link rel="stylesheet" href="assets/fonts/line-icons.css">
+        <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!-- Animate -->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!-- Main Style -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!-- Responsive Style -->
+        <link rel="stylesheet" href="assets/css/responsive.css">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap" rel="stylesheet">
+        <!-- add favicon to tab -->
+        <link rel="icon" href="assets/img/fav_icon.png">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2JX4CS60Q"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-B2JX4CS60Q');
+        </script>
+        <!-- Page-specific components not covered by main.css -->
+        <style>
+          :root{
+            --accent:#6B5FE0;
+            --accent-bg:#e6e4fd;
+            --accent-dark:#4B3FA0;
+            --grey:#868686;
+            --section-bg:#f9f9f9;
+            --line:#e6e8f0;
+          }
+
+          .lede{font-size:16px;margin:0 0 24px;}
+
+          .callout{
+            font-size:14px;color:var(--grey);background:var(--section-bg);border-radius:8px;
+            padding:14px 18px;font-style:italic;
+          }
+
+          .intro-row{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+          .intro-row .lede{flex:1;min-width:260px;margin-bottom:0;}
+          .intro-img{flex-shrink:0;width:205px;max-width:100%;border-radius:14px;display:block;}
+          .stat-box{background:var(--section-bg);border-radius:14px;padding:18px 24px;flex-shrink:0;min-width:190px;}
+          .stat-item{display:flex;align-items:baseline;gap:8px;margin-bottom:14px;}
+          .stat-item:last-child{margin-bottom:0;}
+          .stat-item .num{font-family:'Baloo Chettan 2',cursive;font-size:26px;color:var(--accent);}
+          .stat-item .label{font-size:13px;color:var(--grey);}
+          .stat-divider{height:1px;background:var(--line);margin:10px 0;}
+
+          .flow{position:relative;max-width:680px;margin-top:24px;}
+          .flow-step{position:relative;padding-left:56px;padding-bottom:34px;}
+          .flow-step:last-child{padding-bottom:0;}
+          .flow-step:not(:last-child):before{
+            content:"";position:absolute;left:15px;top:34px;bottom:8px;width:2px;background:var(--accent);
+          }
+          .flow-step:not(:last-child):after{
+            content:"";position:absolute;left:15px;bottom:0;width:0;height:0;
+            border-left:5px solid transparent;border-right:5px solid transparent;
+            border-top:7px solid var(--accent);transform:translateX(-4px);
+          }
+          .flow-back-svg{position:absolute;left:-7px;top:34px;bottom:8px;width:16px;height:auto;display:block;}
+          .flow-num{
+            position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+            background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+            font-family:'Baloo Chettan 2',cursive;font-size:14px;
+          }
+          .flow-step h4{font-size:18px;margin:0 0 8px;padding:0;}
+          .flow-step p{font-size:14px;margin:0;}
+
+          .ratio{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0 8px;}
+          .ratio-card{text-align:left;flex:1;min-width:180px;max-width:220px;background:var(--section-bg);border-radius:16px;padding:28px 18px;}
+          .ratio-card.claude{background:var(--accent-bg);}
+          .ratio-card .pct{font-family:'Baloo Chettan 2',cursive;font-size:44px;color:var(--accent);line-height:1;}
+          .ratio-card:not(.claude) .pct{color:var(--grey);}
+          .ratio-card .who{margin-top:8px;font-size:14px;font-weight:700;}
+          .ratio-card .what{font-size:13px;color:var(--grey);margin-top:2px;}
+
+          .compare{display:flex;gap:16px;margin:24px 0 8px;flex-wrap:wrap;}
+          .compare-card{flex:1;min-width:220px;border-radius:16px;padding:22px 20px;}
+          .compare-card.before{background:var(--section-bg);}
+          .compare-card.after{background:var(--accent-bg);}
+          .compare-card .tag2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;color:var(--grey);}
+          .compare-card.after .tag2{color:var(--accent-dark);}
+          .compare-card.after p{color:#3A2E6B;}
+          .compare-card p{font-size:14px;margin:8px 0 0;}
+
+          /* half the default section-padding gap above and below the Product/Team/Worked with/Timeline row, so the gap stays consistent whether it's followed by another block or not */
+          .pillars-row{padding-top:20px;padding-bottom:20px;}
+
+          .img-placeholder{
+            border:2px dashed var(--line);border-radius:12px;background:var(--section-bg);
+            min-height:260px;display:flex;align-items:center;justify-content:center;
+            color:var(--grey);font-size:13px;text-align:center;padding:20px;
+          }
+
+          @media (max-width:640px){
+            .ratio{flex-direction:column;align-items:stretch;}
+            .ratio-card{max-width:none;}
+            .intro-row{flex-direction:column;}
+            .stat-box{width:100%;}
+            .intro-img{width:100%;}
+            .compare{flex-direction:column;}
+          }
+        </style>
+    </head>
+    <body>
+
+        <div id="protected-content">
+            <!-- Header Area wrapper Starts -->
+            <header id="header-wrap">
+                <div data-include="partials/nav.html" data-nav-page="work"></div>
+                <div id="sidenav" class="section-nav">
+                    <ol>
+                        <li><a href="#about-the-company">The Company</a></li>
+                        <li><a href="#feasible-vision">Project 1</a></li>
+                        <li><a href="#chatbot-admin">Project 2</a></li>
+                    </ol>
+                </div>
+            </header>
+            <!-- main body starts -->
+
+            <!-- About the Company -->
+            <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
+                <section id="about-the-company">
+                    <div class="text-center section-header wow fadeInDown">
+                        <h2 class="section-title" data-wow-delay="0.1s">About the Company</h2>
+                        <div class="shape-epam" data-wow-delay="0.1s"></div>
+                    </div>
+                    <p class="lede">EPAM is a global consulting and digital engineering company, founded in 1993 and now operating across more than 55 countries, that partners with enterprises to design, build, and ship technology-driven products and platforms. Within EPAM, the design team is expected to go beyond delivering wireframes and visual specs — clients look to us to <span class="highlight highlight-epam">help navigate ambiguity, frame the right problems, and stay engaged as a thinking partner across the full arc of a project</span>, from initial problem definition through solution design and hands-on implementation, using structured design methods such as workshops, discovery sessions, and collaborative ideation to get there.</p>
+                </section>
+            </div>
+
+            <!-- ============ PROJECT 1: Design a Feasible Vision ============ -->
+
+            <section id="feasible-vision">
+                <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
+                    <div class="text-center section-header wow fadeInDown">
+                        <h2 class="section-title" data-wow-delay="0.1s">Project 1 - Design a Feasible Vision</h2>
+                        <div class="shape-epam" data-wow-delay="0.1s"></div>
+                    </div>
+                </div>
+<!-- Project facts -->
+                <div class="work-container section-padding pillars-row wow fadeInDown" data-wow-delay="0.1s">
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Product</h4>
+                            <p>A shipment tracking tool used by 9 functions in a global logistic company</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>My Team</h4>
+                            <p>4 designers (incl. me)</br>Project manager</br>Business analyst</br>Logistics specialist</br>AI architect</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Client Side</h4>
+                            <p>12+ VP stakeholders</br>(client)</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Timeline</h4>
+                            <p>Oct 2025 – Apr 2026</br>(6 months)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Why Epam got hired -->
+                <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 info">
+                            <div class="site-heading" style="padding-top:0;">
+                                <h3>Why Epam Got Hired</h3>
+                            </div>
+
+                            <div class="text-section">
+                                <h4 class="shape2-epam">The Ask</h4>
+                                <p>Our client is a well-established global logistics company with over 50 years in operation. They wanted us to redesign their core tracking tool as a gradual, 20–30 year vision — credible enough to win budget from the board.</p>
+                                <h4 class="shape2-epam">Starting Hypothesis</h4>
+                                <p>Users need a predictive tracking with AI, plus a better shipment tracking info presentation so it doesn't need explaining.</p>
+                                <h4 class="shape2-epam">Still Open</h4>
+                                <p>Why staff run into shipment tracking issues and what's actually blocking them.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <img class="w-100" src="assets/img/epam-img/parcel_journey.png" alt="Why Epam got hired">
+                        </div>
+                    </div>
+
+                    <!-- Design as alignment, not a spec -->
+                    <div id="design-as-alignment" class="site-heading">
+                        <h3>Design as Alignment, Not a Spec</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">This wasn't a dev-handoff project. The leadership board needed a vision credible enough to approve budget on a 20–30 year horizon — so design was the tool for asking questions and getting senior stakeholders to align, not for producing specs.</p>
+                            <div class="text-center">
+                                <img class="site-wide" src="assets/img/epam-img/P1_design_process.png" alt="P1_design_process">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The sharper problem we found -->
+                    <div id="sharper-problem" class="site-heading">
+                        <h3>The Problem</h3>
+                    </div>
+                    <p class="lede">Early research revealed a sharper problem than the one we'd been hired to solve: visibility into shipment information wasn't actually the issue — the data on what happened to a shipment already existed in abundance. The real problem was that <span class="highlight highlight-epam">operations and customer service staff couldn't quickly determine a shipment's health, what was blocking it, who owned the next step, or what to do about it. </span>That information existed, but it was scattered across multiple internal systems and buried in cryptic operational codes. So staff built their own workarounds — calls, emails, tribal knowledge — to piece together an answer.</p>
+                    
+
+                    <!-- The deliverable: an AI quick-glance -->
+                    <div id="ai-quick-glance" class="site-heading">
+                        <h3>The Deliverable</h3>
+                    </div>
+                    <p class="lede">An AI quick-glance feature for internal ops and customer service staff — distilling fragmented, jargon-heavy shipment data into an instant, plain-language read on a shipment's status. We also flagged the gaps the client still needs to close — ones outside our project timeline, but necessary before this solution could actually be built.</p>
+
+                    <div class="compare">
+                        <div class="compare-card before">
+                            <div class="tag2">Before</div>
+                            <p>Scattered systems, cryptic codes, and cross-team calls or manual lookups just to piece together a shipment's status.</p>
+                        </div>
+                        <div class="compare-card after">
+                            <div class="tag2">After</div>
+                            <p>AI-powered quick Glance of one instant, plain-language read - what's happening, what's blocking it, and what to do next.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ PROJECT 2: Internal Chatbot & Admin Portal ============ -->
+
+            <section id="chatbot-admin">
+                <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
+                    <div class="text-center section-header wow fadeInDown">
+                        <h2 class="section-title" data-wow-delay="0.1s">Project 2 -Internal Chatbot &amp; Admin Portal</h2>
+                        <div class="shape-epam" data-wow-delay="0.1s"></div>
+                    </div>
+                </div>
+ <!-- Project facts -->
+                <div class="work-container section-padding pillars-row wow fadeInDown" data-wow-delay="0.1s">
+                    <div class="row text-center">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Product</h4>
+                            <p>Internally used chatbot & its Admin portal for a public sector</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Team</h4>
+                            <p>3 backend developers</br>Me — UX designer & engineer</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 info wow fadeInDown">
+                            <h4>Timeline</h4>
+                            <p>May – Aug 2026</br>(~3 months)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
+
+                    <!-- The starting point -->
+                    <div id="starting-point" class="site-heading">
+                        <h3>The Starting Point</h3>
+                    </div>
+                    <div class="intro-row">
+                        <p class="lede">We worked on a pre-sale project to build a fully interactive prototype as a proof of concept — a working chatbot paired with its admin platform. I started with almost nothing to go on: just two tender specification documents from the client and no direct access to end users or product owners.</p>
+
+                        <img class="intro-img" src="assets/img/epam-img/internal_chatbot.png" alt="Internal chatbot prototype">
+                    </div>
+
+                    <!-- A three-step design process -->
+                    <div id="design-process" class="site-heading">
+                        <h3>A Three-Step Design Process</h3>
+                    </div>
+                    <p class="lede">This is my AI-assisted design process — not a single linear pass, but a three-step loop that repeated every few days, once per feature.</p>
+
+                    <div class="flow">
+                        <div class="flow-step">
+                            <div class="flow-num">1</div>
+                            <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
+                                <defs>
+                                    <marker id="flowBackArrow1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
+                                    </marker>
+                                </defs>
+                                <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow1)" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                            <h4>Claude as a research partner</h4>
+                            <p>I fed Claude the two raw specs and asked it to translate documentation into user goals, scenarios, use cases, and stories. I need to know what matter to the user, why they matter, and what actions the user is trying to take.</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-num">2</div>
+                            <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
+                                <defs>
+                                    <marker id="flowBackArrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
+                                    </marker>
+                                </defs>
+                                <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow2)" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                            <h4>Organize my design requirements in Cowork</h4>
+                            <p>Once I understood the scenario, I described what we wanted to build in plain language. Claude structured it into complete, gap-checked design requirements. I also drafted and visually tested solutions before touching implementation.</p>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-num">3</div>
+                            <h4>Implementation</h4>
+                            <p>Once I'm satisfied with the design, I move on to Code to build it on my local and show my ideas to my team. Once we are all agree with the solution, I commit my changes to the repository.</p>
+                        </div>
+                    </div>
+
+                    <!-- The outcome -->
+                    <div id="the-outcome" class="site-heading">
+                        <h3>The Outcome</h3>
+                    </div>
+                    <div class="intro-row">
+                        <p class="lede">The prototype came together almost entirely through vibe-coding. Figma became the tool to literally draw boxes for a quick visual sync with the team. I leaned on AI to fill in my gaps in chatbot-admin domain knowledge, so I could define the right user problem from the start. Vibe-coding let me prototype fast and accurately, which meant covering the edge cases too — not just the happy path. The result: a prototype the Request for Proposal (RFP) team felt confident bringing straight into the pitch to win the client.</p>
+
+                        <img class="intro-img" src="assets/img/epam-img/time_spent.png" alt="Time spent breakdown">
+                    </div>
+                </div>
+            </section>
+
+            <!-- switch project -->
+            <div class="work-container section-padding fadeInDown row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch_active">Current: Epam Work</div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center"></div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center switch"><a class="switch" href="index.html#work">View More Work</a></div>
+            </div>
+
+            <div data-include="partials/footer.html"></div>
+            <!-- Feature Section End -->
+
+            <!-- Preloader -->
+            <div id="preloader">
+                <div class="loader" id="loader-1"></div>
+            </div>
+            <!-- End Preloader -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="assets/js/jquery-min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/wow.js"></script>
+            <script src="assets/js/jquery.nav.js"></script>
+            <script src="assets/js/includes.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/side_nav.js"></script>
+        </div>
+    </body>
+</html>

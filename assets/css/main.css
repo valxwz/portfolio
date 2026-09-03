@@ -237,6 +237,10 @@ a:not([href]):not([tabindex]) {
   background-image: linear-gradient(to right, transparent 50%, #E9D0D0 50%);
 }
 
+.highlight-epam {
+  background-image: linear-gradient(to right, transparent 50%, #e6e4fd 50%);
+}
+
 
 
 .section-nav {
@@ -458,6 +462,14 @@ color:#3d5af1;
   background-color: #17C3EA;
 }
 
+.shape-epam {
+  height: 3px;
+  margin: 0 auto 30px;
+  position: relative;
+  width: 60px;
+  background-color: #6B5FE0;
+}
+
 .shape-g{
   height: 3px;
   margin: 0 auto 30px;
@@ -507,6 +519,11 @@ color:#3d5af1;
 }
 .shape2-nv {
   border-left: 6px solid #AB0808;
+  padding-left: 28px;
+}
+
+.shape2-epam {
+  border-left: 6px solid #6B5FE0;
   padding-left: 28px;
 }
 
