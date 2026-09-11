@@ -46,9 +46,6 @@
             padding:14px 18px;font-style:italic;
           }
 
-          .intro-row{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
-          .intro-row .lede{flex:1;min-width:260px;margin-bottom:0;}
-          .intro-img{flex-shrink:0;width:205px;max-width:100%;border-radius:14px;display:block;}
           .stat-box{background:var(--section-bg);border-radius:14px;padding:18px 24px;flex-shrink:0;min-width:190px;}
           .stat-item{display:flex;align-items:baseline;gap:8px;margin-bottom:14px;}
           .stat-item:last-child{margin-bottom:0;}
@@ -105,9 +102,7 @@
           @media (max-width:640px){
             .ratio{flex-direction:column;align-items:stretch;}
             .ratio-card{max-width:none;}
-            .intro-row{flex-direction:column;}
             .stat-box{width:100%;}
-            .intro-img{width:100%;}
             .compare{flex-direction:column;}
           }
         </style>
@@ -135,7 +130,11 @@
                         <h2 class="section-title" data-wow-delay="0.1s">About the Company</h2>
                         <div class="shape-epam" data-wow-delay="0.1s"></div>
                     </div>
-                    <p class="lede">EPAM is a global consulting and digital engineering company, founded in 1993 and now operating across more than 55 countries, that partners with enterprises to design, build, and ship technology-driven products and platforms. Within EPAM, the design team is expected to go beyond delivering wireframes and visual specs — clients look to us to <span class="highlight highlight-epam">help navigate ambiguity, frame the right problems, and stay engaged as a thinking partner across the full arc of a project</span>, from initial problem definition through solution design and hands-on implementation, using structured design methods such as workshops, discovery sessions, and collaborative ideation to get there.</p>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">EPAM is a global consulting and digital engineering company, founded in 1993 and now operating across more than 55 countries, that partners with enterprises to design, build, and ship technology-driven products and platforms. Within EPAM, the design team is expected to go beyond delivering wireframes and visual specs — clients look to us to <span class="highlight highlight-epam">help navigate ambiguity, frame the right problems, and stay engaged as a thinking partner across the full arc of a project</span>, from initial problem definition through solution design and hands-on implementation, using structured design methods such as workshops, discovery sessions, and collaborative ideation to get there.</p>
+                        </div>
+                    </div>
                 </section>
             </div>
 
@@ -169,12 +168,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Why Epam got hired -->
+                <!-- A Quick Glance -->
                 <div class="work-container section-padding smooth_nav wow fadeInDown" data-wow-delay="0.1s">
                     <div class="row align-items-center">
                         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 info">
                             <div class="site-heading" style="padding-top:0;">
-                                <h3>Why Epam Got Hired</h3>
+                                <h3>A Quick Glance</h3>
                             </div>
 
                             <div class="text-section">
@@ -184,7 +183,9 @@
                                 <p>Users need a predictive tracking with AI, plus a better shipment tracking info presentation so it doesn't need explaining.</p>
                                 <h4 class="shape2-epam">Still Open</h4>
                                 <p>Why staff run into shipment tracking issues and what's actually blocking them.</p>
-                            </div>
+                            <h4 class="shape2-epam">Outcome</h4>
+                            <p>Redesigned the client's tracking tool to show not just each shipment movement, but a summary that explains what those updates mean for the user. </p>
+                        </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                             <img class="w-100" src="assets/img/epam-img/parcel_journey.png" alt="Why Epam got hired">
@@ -204,27 +205,67 @@
                         </div>
                     </div>
 
+                    <!-- Why I Want to Talk About it -->
+                    <div id="manage-expectations" class="site-heading">
+                        <h3>Why I Want to Talk About it</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">What makes this project special isn't the pretty visuals we delivered — I mean, the deliverables are sleek, and I'm proud of my team for that. But the highlight I want to talk about is how we managed alignment, both with the client and within the team: <span class="highlight highlight-epam">alignment breaks under pressure, and someone has to make the call</span>. Two moments show what that looked like in practice:</p>
+
+                            <div class="flow">
+                                <div class="flow-step">
+                                    <div class="flow-num">1</div>
+                                    <h4>A solo call under deadline - during mid term</h4>
+                                    <p>With the team on leave over a holiday week and a client workshop looming, I had to make the call alone and get the team's buy-in fast: redesign into one unified product, or split into several for the diverging user needs. I proposed going with one — new enough that the client would feel their investment was worth it, familiar enough they could still map it to what they knew — and used the workshop to test that bet directly.</p>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-num">2</div>
+                                    <h4>A late requirement mismatch - during the final phase</h4>
+                                    <p>Near the end, we learned the client expected the prototype to match use-case scenarios that had never reached the design team — a surprise to everyone, including our PM. Instead of untangling blame, we ran a quick three-way call with the business analyst and the client's product owner to lock the actual scope, and we delivered what we'd promised.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 info">
+                            <p class="lede mt-3">Another special part is that <span class="highlight highlight-epam">no single designer owned this end to end</span> — we all built on each other's work. My part was closer to a thread-holder for the tracking-visualization feature: I didn't own every detail, but I made the calls on requirements and matched the other two designers to their strengths. I'd initiate the design, they'd build on it as my sounding board, and I'd take it back to iterate. As the one presenting to the board, I made sure it all read as one story.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <img class="w-100" src="assets/img/epam-img/no-solo-design-work-2.png" alt="Peer-to-peer iterative design, delivered as one unified story">
+                        </div>
+                    </div>
+
                     <!-- The sharper problem we found -->
                     <div id="sharper-problem" class="site-heading">
                         <h3>The Problem</h3>
                     </div>
-                    <p class="lede">Early research revealed a sharper problem than the one we'd been hired to solve: visibility into shipment information wasn't actually the issue — the data on what happened to a shipment already existed in abundance. The real problem was that <span class="highlight highlight-epam">operations and customer service staff couldn't quickly determine a shipment's health, what was blocking it, who owned the next step, or what to do about it. </span>That information existed, but it was scattered across multiple internal systems and buried in cryptic operational codes. So staff built their own workarounds — calls, emails, tribal knowledge — to piece together an answer.</p>
-                    
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">Early research revealed a sharper problem than the one we'd been hired to solve: visibility into shipment information wasn't actually the issue — the data on what happened to a shipment already existed in abundance. The real problem was that <span class="highlight highlight-epam">operations and customer service staff couldn't quickly determine a shipment's health, what was blocking it, who owned the next step, or what to do about it. </span>That information existed, but it was scattered across multiple internal systems and buried in cryptic operational codes. So staff built their own workarounds — calls, emails, tribal knowledge — to piece together an answer.</p>
+                            <p class="lede">One early finding shaped the whole direction: showing the latest shipment event wasn't what mattered to users — knowing the next step and the deadline was. That's what pushed the concept from a status feed to an action-first quick-glance.</p>
+                        </div>
+                    </div>
 
                     <!-- The deliverable: an AI quick-glance -->
                     <div id="ai-quick-glance" class="site-heading">
                         <h3>The Deliverable</h3>
                     </div>
-                    <p class="lede">An AI quick-glance feature for internal ops and customer service staff — distilling fragmented, jargon-heavy shipment data into an instant, plain-language read on a shipment's status. We also flagged the gaps the client still needs to close — ones outside our project timeline, but necessary before this solution could actually be built.</p>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">An AI quick-glance feature for internal ops and customer service staff — distilling fragmented, jargon-heavy shipment data into an instant, plain-language read on a shipment's status. We also flagged the gaps the client still needs to close — ones outside our project timeline, but necessary before this solution could actually be built.</p>
 
-                    <div class="compare">
-                        <div class="compare-card before">
-                            <div class="tag2">Before</div>
-                            <p>Scattered systems, cryptic codes, and cross-team calls or manual lookups just to piece together a shipment's status.</p>
-                        </div>
-                        <div class="compare-card after">
-                            <div class="tag2">After</div>
-                            <p>AI-powered quick Glance of one instant, plain-language read - what's happening, what's blocking it, and what to do next.</p>
+                            <div class="compare">
+                                <div class="compare-card before">
+                                    <div class="tag2">Before</div>
+                                    <p>Scattered systems, cryptic codes, and cross-team calls or manual lookups just to piece together a shipment's status.</p>
+                                </div>
+                                <div class="compare-card after">
+                                    <div class="tag2">After</div>
+                                    <p>AI-powered quick Glance of one instant, plain-language read - what's happening, what's blocking it, and what to do next.</p>
+                                </div>
+                            </div>
+                            <p class="lede">The output moved to board review — stakeholders rated the engagement 9/10 and wrote testimony for future work together.</p>
                         </div>
                     </div>
                 </div>
@@ -263,49 +304,56 @@
                     <div id="starting-point" class="site-heading">
                         <h3>The Starting Point</h3>
                     </div>
-                    <div class="intro-row">
-                        <p class="lede">We worked on a pre-sale project to build a fully interactive prototype as a proof of concept — a working chatbot paired with its admin platform. I started with almost nothing to go on: just two tender specification documents from the client and no direct access to end users or product owners.</p>
-
-                        <img class="intro-img" src="assets/img/epam-img/internal_chatbot.png" alt="Internal chatbot prototype">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 info">
+                            <p class="lede">We worked on a pre-sale project to build a fully interactive prototype as a proof of concept — a working chatbot paired with its admin platform. I started with almost nothing to go on: just two tender specification documents from the client and no direct access to end users or product owners.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <img class="w-100" src="assets/img/epam-img/internal_chatbot.png" alt="Internal chatbot prototype">
+                        </div>
                     </div>
 
                     <!-- A three-step design process -->
                     <div id="design-process" class="site-heading">
                         <h3>A Three-Step Design Process</h3>
                     </div>
-                    <p class="lede">This is my AI-assisted design process — not a single linear pass, but a three-step loop that repeated every few days, once per feature.</p>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 info">
+                            <p class="lede">This is my AI-assisted design process — not a single linear pass, but a three-step loop that repeated every few days, once per feature.</p>
 
-                    <div class="flow">
-                        <div class="flow-step">
-                            <div class="flow-num">1</div>
-                            <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
-                                <defs>
-                                    <marker id="flowBackArrow1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                        <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
-                                    </marker>
-                                </defs>
-                                <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow1)" vector-effect="non-scaling-stroke"/>
-                            </svg>
-                            <h4>Claude as a research partner</h4>
-                            <p>I fed Claude the two raw specs and asked it to translate documentation into user goals, scenarios, use cases, and stories. I need to know what matter to the user, why they matter, and what actions the user is trying to take.</p>
-                        </div>
-                        <div class="flow-step">
-                            <div class="flow-num">2</div>
-                            <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
-                                <defs>
-                                    <marker id="flowBackArrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                        <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
-                                    </marker>
-                                </defs>
-                                <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow2)" vector-effect="non-scaling-stroke"/>
-                            </svg>
-                            <h4>Organize my design requirements in Cowork</h4>
-                            <p>Once I understood the scenario, I described what we wanted to build in plain language. Claude structured it into complete, gap-checked design requirements. I also drafted and visually tested solutions before touching implementation.</p>
-                        </div>
-                        <div class="flow-step">
-                            <div class="flow-num">3</div>
-                            <h4>Implementation</h4>
-                            <p>Once I'm satisfied with the design, I move on to Code to build it on my local and show my ideas to my team. Once we are all agree with the solution, I commit my changes to the repository.</p>
+                            <div class="flow">
+                                <div class="flow-step">
+                                    <div class="flow-num">1</div>
+                                    <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
+                                        <defs>
+                                            <marker id="flowBackArrow1" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                                <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
+                                            </marker>
+                                        </defs>
+                                        <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow1)" vector-effect="non-scaling-stroke"/>
+                                    </svg>
+                                    <h4>Claude as a research partner</h4>
+                                    <p>I fed Claude the two raw specs and asked it to translate documentation into user goals, scenarios, use cases, and stories. I need to know what matter to the user, why they matter, and what actions the user is trying to take.</p>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-num">2</div>
+                                    <svg class="flow-back-svg" viewBox="0 0 16 100" preserveAspectRatio="none">
+                                        <defs>
+                                            <marker id="flowBackArrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                                <path d="M0,0 L10,5 L0,10 z" fill="var(--grey)"/>
+                                            </marker>
+                                        </defs>
+                                        <path d="M16,100 C2,74 2,26 16,0" fill="none" stroke="var(--grey)" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6" marker-end="url(#flowBackArrow2)" vector-effect="non-scaling-stroke"/>
+                                    </svg>
+                                    <h4>Organize my design requirements in Cowork</h4>
+                                    <p>Once I understood the scenario, I described what we wanted to build in plain language. Claude structured it into complete, gap-checked design requirements. I also drafted and visually tested solutions before touching implementation.</p>
+                                </div>
+                                <div class="flow-step">
+                                    <div class="flow-num">3</div>
+                                    <h4>Implementation</h4>
+                                    <p>Once I'm satisfied with the design, I move on to Code to build it on my local and show my ideas to my team. Once we are all agree with the solution, I commit my changes to the repository.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -313,10 +361,13 @@
                     <div id="the-outcome" class="site-heading">
                         <h3>The Outcome</h3>
                     </div>
-                    <div class="intro-row">
-                        <p class="lede">The prototype came together almost entirely through vibe-coding. Figma became the tool to literally draw boxes for a quick visual sync with the team. I leaned on AI to fill in my gaps in chatbot-admin domain knowledge, so I could define the right user problem from the start. Vibe-coding let me prototype fast and accurately, which meant covering the edge cases too — not just the happy path. The result: a prototype the Request for Proposal (RFP) team felt confident bringing straight into the pitch to win the client.</p>
-
-                        <img class="intro-img" src="assets/img/epam-img/time_spent.png" alt="Time spent breakdown">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 info">
+                            <p class="lede">The prototype came together almost entirely through vibe-coding. Figma became the tool to literally draw boxes for a quick visual sync with the team. I leaned on AI to fill in my gaps in chatbot-admin domain knowledge, so I could define the right user problem from the start. Vibe-coding let me prototype fast and accurately, which meant covering the edge cases too — not just the happy path. The result: a prototype the Request for Proposal (RFP) team felt confident bringing straight into the pitch to win the client.</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <img class="w-100" src="assets/img/epam-img/time_spent.png" alt="Time spent breakdown">
+                        </div>
                     </div>
                 </div>
             </section>
